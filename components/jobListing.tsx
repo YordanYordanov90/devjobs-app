@@ -44,7 +44,7 @@ const JobListing = ({
         className="flex items-center p-6"
         
       >
-        <Image width={64} height={64} src={logo} alt={`${company} logo`} className="h-16 w-16 rounded-full" />
+        <Image width={64} height={64} src={logo} alt={`${company} logo`} className="h-32 w-32 rounded-xl" />
         <div className="ml-4">
           <h2 className="text-2xl font-bold text-gray-800">{company}</h2>
           <Link
@@ -53,6 +53,7 @@ const JobListing = ({
             target="_blank"
             rel="noopener noreferrer"
           >
+          
             Visit Website
           </Link>
         </div>
