@@ -38,10 +38,10 @@ const JobListing = ({
   role
 }: JobListingProps) => {
   return (
-    <div className="bg-white/90 shadow-lg rounded-lg  mb-8">
+    <div className="bg-white/90 max-w-7xl mx-auto shadow-lg rounded-lg  mb-8">
       {/* Company Header */}
       <div
-        className="flex items-center p-6"
+        className="flex gap-10 mx-auto  items-center p-6"
         
       >
         <Image width={64} height={64} src={logo} alt={`${company} logo`} className="h-32 w-32 rounded-xl" />

@@ -8,7 +8,7 @@ export default function Home() {
       <h1 className="text-5xl font-bold text-violet-600 mb-4">
         Welcome to DevJobs
       </h1>
-      <p className="text-lg text-white/90 mb-8">
+      <p className="text-lg text-black/90 mb-8">
         Discover your next career opportunity in tech. Browse hundreds of job
         listings from top companies around the world.
       </p>

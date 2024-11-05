@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    String @id
+  email String @unique
+
+  // Relation to job listings created by the user
+}
+
+model JobListing {
+  id           Int    @id @default(autoincrement())
+  company      String
+  logo         String // Store URL to the company logo
+  position     String
+  postedAt     String // Change to String to match the JSON format
+  contract     String
+  location     String
+  website      String
+  apply        String // URL to the application page
+  description  String
+  requirements String
+  role         String
+
+  // Timestamps for record management
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

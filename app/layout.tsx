@@ -5,6 +5,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { ClerkProvider } from "@clerk/nextjs";
+import Footer from '@/components/Footer';
 
 const popins = Poppins({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
         <body className={popins.className}>
           <Navbar />
           {children}
+          <Footer />
         </body>
       </html>
     </ClerkProvider>

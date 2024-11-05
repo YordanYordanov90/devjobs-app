@@ -1,7 +1,7 @@
-// components/JobCard.tsx
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FaMapMarkerAlt, FaRegClock, FaBriefcase } from "react-icons/fa";
 
 type JobCardProps = {
   id: number;
@@ -25,26 +25,38 @@ const JobCard = ({
   return (
     <Link
       href={`/job-listings/${id}`}
-      className="bg-white/90 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-200"
+      className="bg-slate-200 max-w-5xl mx-auto shadow-lg rounded-lg mb-6 flex items-center p-5 hover:bg-gray-300 hover:shadow-xl transition duration-300 ease-in-out"
     >
-      <div className="p-6 flex items-center">
+      {/* Company Logo */}
+      <div className="flex-shrink-0">
         <Image
-          width={48}
-          height={48}
+          width={60}
+          height={60}
           src={logo}
           alt={`${company} logo`}
-          className="h-12 w-12 rounded-full"
+          className="rounded-lg  bg-transparent "
         />
-        <div className="ml-4">
-          <h3 className="text-lg font-semibold text-gray-900">{position}</h3>
-          <p className="text-sm text-gray-600">{company}</p>
-        </div>
       </div>
-      <div className="p-6 border-t border-gray-200">
-        <p className="text-sm text-gray-500 mb-1">
-          {postedAt} • {contract}
-        </p>
-        <p className="text-sm text-gray-600">{location}</p>
+
+      {/* Job Details */}
+      <div className="ml-5 flex flex-col justify-between w-full">
+        <div className="flex justify-between items-center">
+          <h3 className="text-xl font-semibold text-gray-900">{position}</h3>
+          <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+            {contract}
+          </span>
+        </div>
+        <p className="text-sm text-gray-600">{company}</p>
+
+        {/* Additional Info */}
+        <div className="flex items-center mt-3 text-sm text-gray-500">
+          <FaRegClock className="mr-2 text-gray-400" />
+          <p className="mr-4">{postedAt}</p>
+          <FaBriefcase className="mr-2 text-gray-400" />
+          <p className="mr-4">{contract}</p>
+          <FaMapMarkerAlt className="mr-2 text-gray-400" />
+          <p>{location}</p>
+        </div>
       </div>
     </Link>
   );
